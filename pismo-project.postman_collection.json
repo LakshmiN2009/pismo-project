@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "af11ef04-74d4-45fe-8bc8-bec8812cb536",
+		"name": "pismo-interview-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13614366",
+		"_collection_link": "https://lunar-trinity-534966.postman.co/workspace/My-Workspace~2578866c-e403-4e51-878d-e1d0e09ee46e/collection/13614366-af11ef04-74d4-45fe-8bc8-bec8812cb536?action=share&source=collection_link&creator=13614366"
+	},
+	"item": [
+		{
+			"name": "createAccounts",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"try {",
+							"    const response = await pm.sendRequest({",
+							"        url: \"https://postman-echo.com/get\",",
+							"        method: \"GET\"",
+							"    });",
+							"",
+							"    console.log(response.json());",
+							"} catch (err) {",
+							"    console.error(err);",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"document_number\": \"12345678913\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}accounts",
+					"host": [
+						"{{host}}accounts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "createAccounts-accountId19",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"document_number\": \"12345678913\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}accounts",
+							"host": [
+								"{{host}}accounts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Oct 2024 16:34:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"account_id\": 19,\n    \"document_number\": \"12345678913\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getAccountById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}accounts/2",
+					"host": [
+						"{{host}}accounts"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAccountById-ID2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}accounts/2",
+							"host": [
+								"{{host}}accounts"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Oct 2024 16:42:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"account_id\": 2,\n    \"document_number\": \"12345678900\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createTransactions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_id\": 1,\n    \"operation_type_id\": 4,\n    \"amount\": 123.45\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}transactions",
+					"host": [
+						"{{host}}transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "createTransactions-operationType4",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": 19,\n    \"operation_type_id\": 4,\n    \"amount\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}transactions",
+							"host": [
+								"{{host}}transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Oct 2024 16:39:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "117"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transaction_id\": 6,\n    \"account_id\": 19,\n    \"operation_type_id\": 4,\n    \"amount\": 200,\n    \"event_date\": \"2024-10-06T16:39:23.437712504Z\"\n}"
+				},
+				{
+					"name": "createTransactions-operationType1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"account_id\": 19,\n    \"operation_type_id\": 1,\n    \"amount\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}transactions",
+							"host": [
+								"{{host}}transactions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Oct 2024 16:41:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transaction_id\": 7,\n    \"account_id\": 19,\n    \"operation_type_id\": 1,\n    \"amount\": -200,\n    \"event_date\": \"2024-10-06T16:41:11.480295304Z\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}
