@@ -33,16 +33,27 @@ pismo-project/
 - **Docker Compose Version:** v2.29.1
 - **Postgres Version:** v14.13
 
-## Running the Project
-To start the project using Docker, follow these steps:
+### To Run the Project
 
-1. Navigate to the Docker directory:
+1. **Initialize the Docker Daemon:**
+   Ensure that the Docker daemon is running. You can start it with:
+   ```bash
+   sudo systemctl start docker
+   ```
+
+2. **Navigate to the Docker Directory:**
+   Change to the directory containing the Docker configuration:
    ```bash
    cd src/docker
    ```
-2. Run Docker Compose to build and start the services:
+
+3. **Build and Start the Services:**
+   Use Docker Compose to build and start the services:
    ```bash
    docker-compose up --build
+   ``` 
+
+This will set up the project and its dependencies, making the API available for use.
    ```
 
 ## API Details
